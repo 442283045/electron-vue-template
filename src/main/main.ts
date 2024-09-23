@@ -4,7 +4,6 @@ import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-
 function createWindow() {
   const mainWindow = new BrowserWindow({
     width: 800,
@@ -19,6 +18,7 @@ function createWindow() {
   if (process.env.NODE_ENV === 'development') {
     const rendererPort = process.argv[2];
     mainWindow.loadURL(`http://localhost:${rendererPort}`);
+    mainWindow.webContents.openDevTools();
   }
   else {
     mainWindow.loadFile(join(app.getAppPath(), 'renderer', 'index.html'));

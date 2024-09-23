@@ -5,9 +5,14 @@ import path from 'path'
 function compile(directory) {
   return new Promise((resolve, reject) => {
     const tsconfigPath = path.join(directory, 'tsconfig.json')
-    const tscProcess = exec(`tsc --project ${tsconfigPath}`, {
-      cwd: directory,
-    })
+    const tsconfigPreloadPath = path.join(directory, 'tsconfig.preload.json')
+
+    const tscProcess = exec(
+      `tsc --project ${tsconfigPath} && tsc --project ${tsconfigPreloadPath}`,
+      {
+        cwd: directory,
+      }
+    )
 
     tscProcess.stdout.on('data', (data) =>
       process.stdout.write(

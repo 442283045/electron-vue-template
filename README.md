@@ -25,26 +25,26 @@ Clone this repository: `git clone git@github.com:Deluze/electron-vue-template.gi
 ### Install dependencies ⏬
 
 ```bash
-npm install
+pnpm install
 ```
 
 ### Start developing ⚒️
 
 ```bash
-npm run dev
+pnpm run dev
 ```
 
 ## Additional Commands
 
 ```bash
-npm run dev # starts application with hot reload
-npm run build # builds application, distributable files can be found in "dist" folder
+pnpm run dev # starts application with hot reload
+pnpm run build # builds application, distributable files can be found in "dist" folder
 
 # OR
 
-npm run build:win # uses windows as build target
-npm run build:mac # uses mac as build target
-npm run build:linux # uses linux as build target
+pnpm run build:win # uses windows as build target
+pnpm run build:mac # uses mac as build target
+pnpm run build:linux # uses linux as build target
 ```
 
 Optional configuration options can be found in the [Electron Builder CLI docs](https://www.electron.build/cli.html).
